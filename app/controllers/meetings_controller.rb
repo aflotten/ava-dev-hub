@@ -3,7 +3,7 @@ class MeetingsController < ApplicationController
   before_action :set_meetings, only: %i[ index create ]
   # GET /meetings or /meetings.json
   def index
-    @meetings = Meeting.order(created_at: :desc)
+    @meetings = Meeting.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
   end
 
   # GET /meetings/1 or /meetings/1.json
