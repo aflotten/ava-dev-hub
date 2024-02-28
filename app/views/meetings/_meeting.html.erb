@@ -1,0 +1,17 @@
+<%= turbo_frame_tag dom_id(meeting) do %>
+  <div class="card">
+    <h5><%= meeting.title %></h5>
+    <p><%= meeting.body %></p>
+
+    <style>
+      .card {
+        padding: 20px;
+        margin: 20px 0;
+        background-color: #fff;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+
+    </style>
+  </div>
+<% end %>

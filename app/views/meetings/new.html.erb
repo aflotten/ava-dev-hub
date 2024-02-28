@@ -1,0 +1,6 @@
+  <h1>New Meeting</h1>
+<%= turbo_frame_tag "meeting_form" do %>
+  <%= render 'form', meeting: @meeting %>
+
+  <%= link_to 'Back', meetings_path %>
+<% end %>
