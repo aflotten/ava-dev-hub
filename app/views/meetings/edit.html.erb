@@ -4,6 +4,7 @@
 <%= render 'form', meeting: @meeting %>
 
 <div class="container">
-  <%= link_to 'Show', @meeting %> |
-  <%= link_to 'Back', meetings_path %>
+  <%= link_to 'Show', @meeting, class:"custom-link" %> |
+  <%= link_to 'Back', meetings_path, class:"custom-link" %>
 </div>
+<br />

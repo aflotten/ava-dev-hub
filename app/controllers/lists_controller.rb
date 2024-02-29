@@ -4,7 +4,7 @@ class ListsController < ApplicationController
 
   # GET /lists or /lists.json
   def index
-    @lists = List.order(created_at: :desc).paginate(page: params[:page], per_page: 5)
+    @lists = List.order(completed: :asc).paginate(page: params[:page], per_page: 5)
   end
 
   # GET /lists/1 or /lists/1.json

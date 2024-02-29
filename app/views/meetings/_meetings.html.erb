@@ -10,7 +10,7 @@
   <tbody>
     <% @meetings.each do |meeting| %>
       <tr>
-        <td><%= link_to meeting.title, meeting_path(meeting), class: "custom-link" %></td>
+        <td class="col-2"><%= link_to meeting.title, edit_meeting_path(meeting), class: "custom-link" %></td>
         <td><%= meeting.body %></td>
         <td class="text-right">
             <%= button_to meeting_path(meeting), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link text-danger", style: "padding: 0; border: none; background: none;" do %>
