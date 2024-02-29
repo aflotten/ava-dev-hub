@@ -1,0 +1,15 @@
+<div class="container">
+  <div id="alert" class="alert alert-warning alert-dismissible fade show" role="alert">
+    <%= notice %>
+    <button type="button" class="btn-close" aria-label="Close" onclick="closeAlert()"></button>
+  </div>
+</div>
+
+<script>
+function closeAlert() {
+  var alert = document.getElementById("alert");
+  if (alert) {
+    alert.style.display = "none";
+  }
+}
+</script>

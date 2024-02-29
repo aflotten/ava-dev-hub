@@ -13,6 +13,10 @@
 
   <body>
     <%= render "home/navbar" %>
+    <br />
+    <% if notice %>
+      <%= render "layouts/alerts" %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
