@@ -26,8 +26,8 @@ class MeetingsController < ApplicationController
     respond_to do |format|
       if @meeting.save
         format.turbo_stream {render "create"}
-        # format.html { redirect_to meetings_path, notice: "Meeting was successfully created." }
-        # format.json { render :show, status: :created, location: @meeting }
+        format.html { redirect_to meetings_url, notice: "Meeting was successfully created." }
+        format.json { render :show, status: :created, location: @meeting }
       else
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @meeting.errors, status: :unprocessable_entity }

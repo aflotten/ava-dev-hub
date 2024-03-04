@@ -1,7 +1,16 @@
 <div class="topnav">
-  <a class="active" href="/">AvaDevHub
-    <%= link_to image_tag("ava-logo.png", alt: "Ava Logo"), root_path, class: "navbar-brand" %>
+  <%= link_to root_path, class: "active navbar-brand" do %>
+    AvaDevHub <%= image_tag("ava-logo.png", alt: "Ava Logo") %>
+  <% end %>
     <%= link_to "Meetings", meetings_path %>
     <%= link_to "Discussion Items", lists_path %>
-  </a>
+  <div class="right-nav">
+    <% if user_signed_in? %>
+      <%= link_to "Sign Out", destroy_user_session_path, method: :delete, class: "anti-button" %>
+      <%= link_to "Account", edit_user_registration_path %>
+    <% else %>
+      <%= link_to "Sign In", new_user_session_path %>
+      <%= link_to "Sign Up", new_user_registration_path %>
+    <% end %>
+   </div>
 </div>

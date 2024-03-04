@@ -41,7 +41,7 @@
 .navbar-brand img {
   width: 25px;
   height: 25px;
-  margin-left: -8px;
+  margin-left: 2px;
 }
 
 .custom-link {
@@ -51,4 +51,34 @@
 
 .striker {
   text-decoration: line-through;
+}
+
+.right-nav {
+  float: right;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-card {
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    width: 430px;
+    height: 650px;
+    margin: 0 auto;
+    background-color: whitesmoke;
+}
+
+.signup-card {
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 430px;
+  height: 650px;
+  margin: 0 auto;
+  background-color: whitesmoke;
 }

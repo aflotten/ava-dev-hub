@@ -1,3 +1,4 @@
-<%= turbo_stream.update :meetings do %>
-  <%= render "meetings" %>
+<%= turbo_stream.update :meeting_form, "" %> 
+<%= turbo_stream.prepend :meeting do %>
+  <%= render @meeting %>
 <% end %>

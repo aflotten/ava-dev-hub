@@ -1,20 +1,16 @@
 <br />
 <div class="container">
+  <%= link_to 'New Meeting', new_meeting_path, class: "btn btn-success", data: {"turbo-frame": "meeting_form"} %>
   <%= turbo_stream_from "meetings" %>
   <%= turbo_frame_tag "meeting_form"%>
-  <%= link_to 'New Meeting', new_meeting_path, class: "btn btn-success", data: {"turbo-frame": "meeting_form"} %>
-  <div class="container">
-    <br />
-    <table>
-      <tbody id="meetings">
-        <%= render "meetings"%>
-      </tbody>
-    </table>
-  </div>
-</div>
+ 
+
+<%= turbo_frame_tag "meetings" do %>
+  <%= render @meetings %>
+<% end %>
 
 <div class="container">
-  <%= will_paginate @lists, class:"page-item"%>
+  <%= will_paginate @meetings, class:"page-item"%>
   <br />
   <br />
 </div>

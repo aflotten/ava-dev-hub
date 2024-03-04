@@ -1,0 +1,29 @@
+<div class="center">
+  <div class="text-center login-card">
+  <img src="<%= asset_path('ava-logo-ava.png') %>" alt="Ava Logo">
+
+    <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+      <div class="field form-group">
+        <br />
+        <br />
+        <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control", placeholder:"Enter Ava Email" %>
+      </div>
+
+      <div class="field form-group">
+        <br />
+        <br />
+        <%= f.password_field :password, autocomplete: "current-password", class:"form-control", placeholder:"Password" %>
+      </div>
+      
+      <br />
+      <br />
+      <div class="actions">
+        <%= f.submit "Sign In", class:"btn btn-success", id: "text-left" %>
+      </div>
+
+    <% end %>
+
+    <br />
+    <%= render "devise/shared/links" %>
+  </div>
+</div>
