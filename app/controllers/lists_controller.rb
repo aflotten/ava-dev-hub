@@ -4,7 +4,7 @@ class ListsController < ApplicationController
 
   # GET /lists or /lists.json
   def index
-    @lists = List.order(completed: :asc).paginate(page: params[:page], per_page: 5)
+    @lists = List.order(completed: :asc, created_at: :desc).paginate(page: params[:page], per_page: 5)
   end
 
   # GET /lists/1 or /lists/1.json
@@ -26,6 +26,7 @@ class ListsController < ApplicationController
 
     respond_to do |format|
       if @list.save
+        format.turbo_stream {render "create"}
         format.html { redirect_to lists_path, notice: "List was successfully created." }
         format.json { render :show, status: :created, location: @list }
       else

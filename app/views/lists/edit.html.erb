@@ -1,11 +1,11 @@
-<div class="container">
-  <br />
   <h3 class="text-center">Edit Follow Up Item</h3>
-
-  <%= render 'form', list: @list %>
-  <br />
-  <%= link_to 'Show', @list, class: "custom-link" %> |
-  <%= link_to 'Back', lists_path, class: "custom-link" %>
-  <br />
-  <br />
-</div>
+  <%= turbo_frame_tag dom_id(@list) do %>
+    <div class="container">
+      <br />
+      <%= render 'form', list: @list %>
+      <br />
+      <%= link_to 'Back', lists_path, class: "custom-link" %>
+      <br />
+      <br />
+    </div>
+  <% end %>

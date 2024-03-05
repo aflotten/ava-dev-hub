@@ -1,0 +1,16 @@
+<%= turbo_frame_tag dom_id(list) do %>
+  <br />
+  <div class="container">
+    <ul class="list-group">
+      <li class="list-group-item d-flex justify-content-between align-items-center<%= list.completed ? ' completed' : '' %>">
+        <div>
+          <h4><%= link_to list.title, edit_list_path(list), class:"custom-link" %></h4>
+          <p><%= list.notes %></p>
+        </div>
+        <%= button_to list_path(list), method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-link text-danger", style: "padding: 0; border: none; background: none;" do %>
+          <i class="bi bi-trash3"></i>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+<% end %>

@@ -1,6 +1,9 @@
-<div class="container">
-  <br />
-  <h3 class="text-center">New Discussion Item</h3>
-  <%= render 'form', list: @list %>
-  <%= link_to 'Back', lists_path %>
-</div>
+<%= turbo_frame_tag "list_form" do %>
+  <div class="container">
+    <h3 class="text-center">New Discussion Item</h3>
+    <br />
+    <%= render 'form', list: @list %>
+    <%= link_to 'Close', lists_path, class:"custom-link" %>
+  </div>
+
+<% end %>
